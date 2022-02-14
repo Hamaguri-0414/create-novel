@@ -1,0 +1,26 @@
+#!/bin/sh
+
+if [ $# -ne 1 ]; then
+    echo 'Usage: create-novel [title]'
+else
+    mkdir $1
+
+    touch $1/.gitignore
+
+    mkdir $1/design/
+    touch $1/design/idea.md
+    touch $1/design/character.md
+    touch $1/design/worldview.md
+    touch $1/design/references.md
+
+    mkdir $1/summary/
+    touch $1/summary/outline.txt
+    touch $1/summary/keypoint.md
+
+    mkdir $1/draft/
+
+    mkdir $1/publish/
+    touch $1/publish/$1.txt
+
+    echo 'Created a directory structure for the novel.'
+fi
